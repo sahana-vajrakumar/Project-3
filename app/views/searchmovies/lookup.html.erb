@@ -1,0 +1,13 @@
+<h1>Movie Results</h1>
+<hr>
+
+<% @movieresults.each do |movie| %>
+
+  Title:  <%= movie["movie"]["title"]%>
+  <br>
+  Movie Released on: <%= movie["movie"]["year"]%>
+  <br>
+  <hr>
+
+
+<% end %>

@@ -1,0 +1,14 @@
+<h2>Top Shows<h2>
+
+<hr>
+<% @show_results.each do |show| %>
+
+  Title:  <%= show["title"]%>
+  <br>
+  Year:  <%= show["year"]%>
+  <hr>
+
+
+  <br>
+
+<% end %>
