@@ -4,10 +4,13 @@
 <% @movieresults.each do |movie| %>
 
   Title:  <%= movie["movie"]["title"]%>
+
   <br>
   Movie Released on: <%= movie["movie"]["year"]%>
   <br>
-  <img src="<%= "https://image.tmdb.org/t/p/w500#{ MoviePoster.get_poster_path_cached( movie['movie']['ids']['tmdb'] ) }" %>">
+  <img src="<%= "https://image.tmdb.org/t/p/w200#{ MoviePoster.get_poster_path_cached( movie['movie']['ids']['tmdb'] ) }" %>">
+  <%= link_to 'Add To Your Favorites', movies_path(:name => movie["movie"]["title"] ), method: :post %>
+
   <hr>
 
 <% end %>

@@ -9,8 +9,6 @@ class SearchmoviesController < ApplicationController
   def lookup
   # raise 'hell'
 
-
-
     @movieresults = HTTParty.get("https://api.trakt.tv/search/movie?query=#{ params[:text_query] }", {
             method: "GET",
             headers: {

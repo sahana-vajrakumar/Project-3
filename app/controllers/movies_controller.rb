@@ -1,25 +1,24 @@
 class MoviesController < ApplicationController
+  def new
+    # binding.pry
+    # movie = Movie.new
+    # movie.name =
+    # movie.save
+    # movie
+  end
 
-
-
-def index
-
-@results = HTTParty.get("https://api.trakt.tv/movies/trending", {
-        method: "GET",
-        headers: {
-          "Accept": 'application/json',
-          "Content-Type": "application/json",
-          "trakt-api-version": "2",
-          "trakt-api-key": "c1aa5a18c171bf2e33dd5185d5f22d99fc01efa0b5303b1f4806a17160cee4cf"
-        }
-      })
-
+  def create
+    raise 'hell'
+    movie = Movie.create movie_params
   end
 
 
 
+private
 
+def movie_params
+  params.permit(:name)
 
-
+end
 
 end

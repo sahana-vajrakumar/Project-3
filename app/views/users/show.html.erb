@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+
+
+<h1> Your Profile Details  </h1><hr>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @user.password %>
+</p>
+
+<p>
+  <strong>Icon:</strong>
+  <br>
+  <image id="user_pic" src="<%= @user.icon %>"></image>
+</p>
+
+
+<%= link_to 'Edit', edit_user_path(@user) %>
+<div class="panel-footer">
+  <%= link_to 'Check Your Stats', stats_path, class: "btn btn-lg" %>
+</div>

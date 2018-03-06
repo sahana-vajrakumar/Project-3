@@ -1,14 +1,16 @@
 User.destroy_all
 
-u1 = User.create name: Faker::Name.name, email: 'test@gmail.com', password_digest: 'chicken'
-u2 = User.create name: Faker::Name.name, email: 'user@gmail.com', password_digest: 'chicken'
-u3 = User.create name: Faker::Name.name, email: 'sahana@gmail.com', password_digest: 'chicken'
+u1 = User.create name: Faker::Name.name, email: 'test@gmail.com', password: 'chicken'
+u2 = User.create name: Faker::Name.name, email: 'user@gmail.com', password: 'chicken'
+u3 = User.create name: Faker::Name.name, email: 'sahana@gmail.com', password: 'chicken'
+u4 = User.create name: Faker::Name.name, email: 'user1@gmail.com', password: 'chicken'
+u5 = User.create name: Faker::Name.name, email: 'user2@gmail.com', password: 'chicken'
 
-u4 = User.create name: Faker::Name.name, email: 'abc@gmail.com', password_digest: 'chicken'
+u6 = User.create name: Faker::Name.name, email: 'abc@gmail.com', password: 'chicken'
 
-u5 = User.create name: Faker::Name.name, email: 'saanu@gmail.com', password_digest: 'chicken'
+u7 = User.create name: Faker::Name.name, email: 'saanu@gmail.com', password: 'chicken'
 
-u6 = User.create name: Faker::Name.name, email: 'test2@gmail.com', password_digest: 'chicken'
+u8 = User.create name: Faker::Name.name, email: 'test2@gmail.com', password: 'chicken'
 
 
 puts "There are #{User.all.length} users"
