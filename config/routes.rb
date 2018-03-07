@@ -6,7 +6,7 @@ delete '/login' => 'session#destroy'
 
   root to: 'homepages#home'
   resources :trendingmovies
-  resources :shows
+  resources :trendingshows
   resources :users
   resources :movies
 

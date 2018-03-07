@@ -1,4 +1,4 @@
-class ShowsController < ApplicationController
+class TrendingshowsController < ApplicationController
 
 
 

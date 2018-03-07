@@ -1,24 +1,22 @@
 class MoviesController < ApplicationController
+
+  before_action :check_if_logged_in, only: [:create]
+
+
   def new
-    # binding.pry
-    # movie = Movie.new
-    # movie.name =
-    # movie.save
-    # movie
   end
 
   def create
-    raise 'hell'
-    movie = Movie.create movie_params
+
+    m = Movie.create_with(name: params[:name], year: params[:year]).find_or_create_by(traktid: params[:traktid])
+    # m = Movie.find_or_create_by
+
+    @current_user.movies << m
+
+    # movie = Movie.create name: params[:name], year: params[:year] #, user: @current_user
+
+    render json: { }, status: :ok
   end
 
-
-
-private
-
-def movie_params
-  params.permit(:name)
-
-end
 
 end

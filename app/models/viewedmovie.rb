@@ -1,0 +1,2 @@
+class Viewedmovie < ApplicationRecord
+end

@@ -10,5 +10,28 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+//= require jquery3
+//= require jquery_ujs
+//= require_tree .
 //= require rails-ujs
 //= require_tree .
+
+
+$(document).ready(function() {
+  $("button.addFavourite").click(function(){
+
+  $.ajax({
+    type: "POST",
+    url: "/movies",
+    data:{
+      name: $(this).data('title'),
+      year: $(this).data('year'),
+      traktid: $(this).data('traktid')
+
+    }
+
+  })
+
+
+})
+});
