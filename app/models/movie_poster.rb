@@ -17,8 +17,9 @@ class MoviePoster < ApplicationRecord
       puts movie['poster_path']
       puts movie['overview']
       # binding.pry
-      MoviePoster.create tmdb_id: id, poster_path: movie['poster_path'], overview: movie['overview']  
+      MoviePoster.create tmdb_id: id, poster_path: movie['poster_path'], overview: movie['overview']
       return movie['poster_path']
+
     end
 
     puts "******** MOVIE NOT FOUND IN TMDB (#{ id })"

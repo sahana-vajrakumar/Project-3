@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180307001912) do
+ActiveRecord::Schema.define(version: 20180307043437) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -29,6 +29,7 @@ ActiveRecord::Schema.define(version: 20180307001912) do
     t.text "name"
     t.integer "year"
     t.integer "traktid"
+    t.text "image"
   end
 
   create_table "movies_users", id: false, force: :cascade do |t|
@@ -55,12 +56,21 @@ ActiveRecord::Schema.define(version: 20180307001912) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "users_viewedmovies", id: false, force: :cascade do |t|
+    t.bigint "viewedmovie_id", null: false
+    t.bigint "user_id", null: false
+    t.index ["user_id"], name: "index_users_viewedmovies_on_user_id"
+    t.index ["viewedmovie_id"], name: "index_users_viewedmovies_on_viewedmovie_id"
+  end
+
   create_table "viewedmovies", force: :cascade do |t|
     t.text "name"
     t.integer "year"
     t.integer "traktid"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.date "date"
+    t.text "image"
   end
 
 end

@@ -18,7 +18,7 @@
 
 
 $(document).ready(function() {
-  $("button.addFavourite").click(function(){
+  $(".addFavourite").click(function(){
 
   $.ajax({
     type: "POST",
@@ -26,11 +26,34 @@ $(document).ready(function() {
     data:{
       name: $(this).data('title'),
       year: $(this).data('year'),
-      traktid: $(this).data('traktid')
+      traktid: $(this).data('traktid'),
+      image: $(this).data('image')
 
     }
 
   })
+
+
+})
+
+
+
+$(".addWatchedHistory").click(function(){
+
+$.ajax({
+  type: "POST",
+  url: "/viewedmovies",
+  data:{
+    name: $(this).data('title'),
+    year: $(this).data('year'),
+    traktid: $(this).data('traktid'),
+    image: $(this).data('image')
+
+
+
+  }
+
+})
 
 
 })

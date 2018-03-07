@@ -1,0 +1,12 @@
+<h1>Your List Of Favourite</h1>
+  <ol>
+    <% @movie.each do |movie| %>
+
+        <h1>Title: <%= movie.name %></h1>
+        <br>
+        <h1>Year: <%= movie.year %></h1>
+        <br>
+        <img src="<%= movie.image%>">
+        <hr>
+    <% end %>
+  </ol>

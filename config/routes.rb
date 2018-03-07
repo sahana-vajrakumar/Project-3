@@ -9,6 +9,7 @@ delete '/login' => 'session#destroy'
   resources :trendingshows
   resources :users
   resources :movies
+  resources :viewedmovies
 
   get  '/searchmovies' => 'searchmovies#form'
   post '/searchmovies/lookup' => 'searchmovies#lookup'
