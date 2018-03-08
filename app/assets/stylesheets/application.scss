@@ -80,6 +80,19 @@ h1{
   text-align: center;
   font-family: 'Lobster', cursive;
   font-size: 40px;
+  color: red;
+}
+
+h4{
+  text-align: center;
+  font-family: 'Lobster', cursive;
+  font-size: 24px;
+  color: red;
+}
+p{
+  text-align: center;
+  font-family: 'Lobster', cursive;
+  font-size: 15px;
   color: #FFFAFA;
 }
 
@@ -142,5 +155,25 @@ button{
 .show{
   text-align: center;
   color: #FFFAFA;
+  font-size: 30px;
+}
+
+.description{
+  text-align: center;
+  color: #FFFAFA;
+  font-size: 18px;
+}
+
+.history{
+  font-size: 20px !important;
+  color: #FFFAFA !important;
+}
+
+.form{
+  color:grey !important;
+  text-align: center;
+  font-size: 18px;
+}
+.dropdown-header{
   font-size: 30px;
 }

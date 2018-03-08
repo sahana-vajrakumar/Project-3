@@ -1,20 +1,38 @@
 
 
-<h1>Movie Look(Up)</h1>
-
+<h1>Search Movies</h1>
+ <div class="form">
 <form action="/searchmovies/lookup" method="post">
 
-  Text Search:
+
   <input type="text" name="text_query" placeholder="Movie Title">
 
   <button>Search</button>
 
 </form>
+</div>
+<br>
+<h4>Most Watched Movie This Week</h4>
+<div class="row">
+<% @most_watched_movie.each do |movie| %>
 
-<p>
-  <a href="/viewedmovies">Watched List</a>
-</p>
+  <div class="col-md-3">
 
-<p>
-  <a href="/movies">Favourites</a>
-</p>
+  <% if MoviePoster.get_poster_path_cached( movie['movie']['ids']['tmdb'] )%>
+  <%link = MoviePoster.get_poster_path_cached( movie['movie']['ids']['tmdb'] )%>
+
+  <%image = "https://image.tmdb.org/t/p/w200#{ link[0] }" %>
+
+  <% else %>
+  <%image = "http://sherly.mobile9.com/download/media/210/unknown_imzea6c9.jpg"%>
+  <% end %>
+
+
+    <img src="<%= image %>" class="img-rounded">
+    <div class="caption">
+    <p>Number Of Watches This Week: <%= movie["watcher_count"]%></p>
+    </div>
+    </div>
+
+    <% end %>
+    </div>

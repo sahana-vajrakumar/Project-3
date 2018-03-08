@@ -33,26 +33,31 @@ class MoviesController < ApplicationController
               "trakt-api-key": "c1aa5a18c171bf2e33dd5185d5f22d99fc01efa0b5303b1f4806a17160cee4cf"
             }
           })
-          # raise 'hell'
 
-          # watch_urls = HTTParty.get("https://trakt.tv/movies/#{@movieshow[0]['movie']['ids']['slug']}/streaming_links")
-          # doc = Nokogiri::HTML.parse(watch_urls)
-          # @links_array = []
-          # @name_array = []
-          # doc.css('a').each do |a|
-          #   puts "="*80
-          #   p a
-          #   # puts a
-          #   # puts a['href'] if a['href'].start_with? '/watchnow'
-          #   temp = a['href'] if a['href'].start_with? '/watchnow'
-          #   temp_name = a['data-source']
-          #
-          #
-          #   @links_array.push(temp)
-          #   @name_array.push(temp_name)
-          #   puts @links_array
-          #
-          # end
+    # @movie_description =
+    #       # raise 'hell'
+    #
+          watch_urls = HTTParty.get("https://trakt.tv/movies/#{@movieshow[0]['movie']['ids']['slug']}/streaming_links")
+          doc = Nokogiri::HTML.parse(watch_urls)
+          @links_array = []
+          @name_array = []
+          doc.css('a').each do |a|
+            puts "="*80
+            # p a
+            # puts a
+            # puts a['href'] if a['href'].start_with? '/watchnow'
+            temp = a['href'] if a['href'].start_with? '/watchnow'
+            temp_name = a['data-source']
+            image = "https://trakt.tv#{a.children[0].children[0]["data-original"]}"
+
+
+            @links_array.push([temp ,temp_name] )
+            # @name_array.push(temp_name)
+            # puts @links_array
+
+          end
+
+
 
 
   end

@@ -15,7 +15,7 @@ No of People watching: <%= movie["watchers"]%>
 <br> -->
 <%= link_to trendingmovie_path(movie["movie"]["ids"]["trakt"]) do %>
 <div class="column">
-<img src="<%= "https://image.tmdb.org/t/p/w200#{ MoviePoster.get_poster_path_cached( movie['movie']['ids']['tmdb'] ) }" %>">
+<img src="<%= "https://image.tmdb.org/t/p/w200#{ MoviePoster.get_poster_path_cached( movie['movie']['ids']['tmdb'] )[0] }" %>">
 
 </div>
 <% end %>

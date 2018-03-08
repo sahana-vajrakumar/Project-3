@@ -6,7 +6,7 @@ class MoviePoster < ApplicationRecord
       puts "=" * 80
       puts "FOUND IN DB: #{ id }"
       p m
-      return m.poster_path
+      return [m.poster_path, m.overview]
     end
 
     # fallback to API request, but save results in our DB

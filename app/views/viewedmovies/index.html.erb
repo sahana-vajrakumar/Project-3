@@ -1,12 +1,18 @@
 <h1>Watched History</h1>
-  <ol>
-    <% @viewedmovie.each do |view| %>
+<div class="row">
+  <% @viewedmovie.each do |view| %>
 
-        <h1>Title: <%= view.name %></h1>
+    <div class="col-md-3">
+      <img src="<%= view.image%>">
+      <div class="caption">
         <br>
-        <h1>Year: <%= view.year %></h1>
-        <br>
-        <img src="<%= view.image%>">
-        <hr>
-    <% end %>
-  </ol>
+        <h1 class="history">Title:
+          <%= view.name %></h1>
+
+        <h1 class="history">Year:
+          <%= view.year %></h1>
+      </div>
+    </div>
+
+  <% end %>
+</div>

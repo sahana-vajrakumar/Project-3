@@ -26,26 +26,26 @@ s3 = Show.create name: "Ashoka"
 puts "There are #{Show.all.length} shows"
 
 Movie .destroy_all
-
-m1 = Movie.create name: "Jab We Met"
-
-m2 = Movie.create name: "Jab Harry Met Sajel"
-
-m3 = Movie.create name: "KKHH"
-
+#
+# m1 = Movie.create name: "Jab We Met"
+#
+# m2 = Movie.create name: "Jab Harry Met Sajel"
+#
+# m3 = Movie.create name: "KKHH"
+#
 puts "There are #{Movie.all.length} movies"
 
-
+#
 Viewedmovie.destroy_all
-
-v1 = Viewedmovie.create name: "Jab We Met"
-
-v2 = Viewedmovie.create name: "Jab Harry Met Sajel"
-
-v3 = Viewedmovie.create name: "KKHH"
-
+#
+# v1 = Viewedmovie.create name: "Jab We Met"
+#
+# v2 = Viewedmovie.create name: "Jab Harry Met Sajel"
+#
+# v3 = Viewedmovie.create name: "KKHH"
+#
 puts "There are #{Viewedmovie.all.length} Viewed movies"
 
 u1.shows << s1 << s2
-u2.movies << m1 << m2
-u1.viewedmovies << v1 << v2
+# u2.movies << m1 << m2
+# u1.viewedmovies << v1 << v2

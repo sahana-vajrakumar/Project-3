@@ -6,17 +6,33 @@
    <br>
    Released Year: <%= @movieshow[0]["movie"]["year"] %>
    <br>
+   <%link = MoviePoster.get_poster_path_cached( @movieshow[0]['movie']['ids']['tmdb'] )%>
 
-   <%image = "https://image.tmdb.org/t/p/w500#{ MoviePoster.get_poster_path_cached( @movieshow[0]['movie']['ids']['tmdb'] ) }" %>
+
+
+   <%image = "https://image.tmdb.org/t/p/w500#{ link[0] }" %>
 
    <img src="<%= image %>" class="img-rounded" id="show-img">
+   <br>
+   <div class="dropdown-header">
+   <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Watch Now
+   <span class="caret"></span></button>
+   <ul class="dropdown-menu">
 
-   <!--
-    <% @links_array.each do |link| %>
-    <% @name_array.each do |name| %>
-    <a href="https:trakt.tv<%=link%>"><%= name%></a>
-    <br>
-    <% end %>
-    <% end %> -->	
+    <% @links_array.each_with_index do |link, name| %>
+
+
+  <li><a href="https:trakt.tv<%=link[0]%>"><%= link[1]%></a></li>
+  <br>
+
+  <% end %>
+
+ </ul>
+ </div>
+ <br>
+   <div class="description">
+   DESCRIPTION: <%= link[1]%>
+   </div>
+
 
    </div>
