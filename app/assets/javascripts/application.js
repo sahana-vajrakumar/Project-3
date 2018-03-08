@@ -34,6 +34,8 @@ $(document).ready(function() {
 
   })
 
+  // $(".addFavourite").text('Save')
+
 
 })
 

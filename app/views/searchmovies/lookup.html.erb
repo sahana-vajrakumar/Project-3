@@ -1,7 +1,8 @@
 <h1>Movie Search Results</h1>
 <hr>
-
 <div class="row">
+
+
 <% @movieresults.each do |movie| %>
 
  <!-- <p>
@@ -10,19 +11,23 @@
   Movie Released on: <%= movie["movie"]["year"]%>
   <br>
   </p> -->
+  <div class="col-md-3">
   <% if MoviePoster.get_poster_path_cached( movie['movie']['ids']['tmdb'] )%>
   <%image = "https://image.tmdb.org/t/p/w200#{ MoviePoster.get_poster_path_cached( movie['movie']['ids']['tmdb'] ) }" %>
   <% else %>
   <%image = "http://sherly.mobile9.com/download/media/210/unknown_imzea6c9.jpg"%>
   <% end %>
   <%= link_to movie_path(movie["movie"]["ids"]["trakt"]) do %>
-<div class="column">
+
     <img src="<%= image %>" class="img-rounded">
 
-</div>
+
   <% end %>
 
 
+
+
+  <div class="caption">
 
   <button class="addFavourite" data-traktid="<%= movie["movie"]["ids"]["trakt"]%>" data-title="<%= movie["movie"]["title"]%>" data-year="<%= movie["movie"]["year"]%>" data-image="<%= image%>"><img src="http://www.macrobusiness.com.au/wp-content/uploads/2013/05/Favourites-Alt.png" class="icon"></button>
 
@@ -30,7 +35,10 @@
 
   <button class="moreInfo" data-traktid="<%= movie["movie"]["ids"]["trakt"]%>" data-title="<%= movie["movie"]["title"]%>" data-year="<%= movie["movie"]["year"]%>" data-image="<%= image%>">More Info</button>
 
-</div>
+ </div>
+   </div>
   <!-- <hr> -->
 
 <% end %>
+
+</div>

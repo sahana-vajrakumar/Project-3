@@ -1,16 +1,23 @@
 
-<h1>Login</h1>
-
+<!-- <h1>Login</h1> -->
+<br>
+<br>
 <%= flash[:error] %>
-
+<div class="login">
 <%= form_tag login_path do %>
 
   <%= label_tag :email %>
   <%= email_field_tag :email %>
+  <br>
+  <br>
 
   <%= label_tag :password %>
   <%= password_field_tag :password, nil %>
-
+  <br>
+  </div>
+  <br>
+ <div class="submit">
   <%= submit_tag 'Login' %>
+  </div>
 
 <% end %>

@@ -20,7 +20,8 @@
  body{
 
     background-color: rgba(0, 0, 0, 0.96);
-    color: #FFFAFA;
+
+    font-family: 'Lobster', cursive;
  }
 
  .image{
@@ -72,7 +73,31 @@ h2{
   text-align: center;
   font-family: 'Lobster', cursive;
   font-size: 40px;
+  color: #FFFAFA;
 }
+
+h1{
+  text-align: center;
+  font-family: 'Lobster', cursive;
+  font-size: 40px;
+  color: #FFFAFA;
+}
+
+.login{
+  text-align: center;
+  font-family: 'Lobster', cursive;
+  font-size: 20px;
+  // color: #FFFAFA;
+}
+
+.submit{
+  text-align: center;
+  font-family: 'Lobster', cursive;
+  font-size: 20px;
+
+}
+
+
 
 .navbar navbar-default navbar-fixed-top{
   background-color: black;
@@ -94,4 +119,28 @@ h2{
 .navbar-header{
   font-size: 18px !important;
 
+}
+
+button{
+  background-color: black !important;
+  border: none !important;
+  padding-top: 20px;
+  padding-top: 20px;
+}
+
+
+#show-img{
+  max-width: 500px;
+  max-height: 500px;
+}
+.img-rounded{
+  max-width: 250px;
+  max-height: 250px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8), 0 6px 20px 0 rgba(0, 0, 0, 0.79) !important;
+}
+
+.show{
+  text-align: center;
+  color: #FFFAFA;
+  font-size: 30px;
 }
