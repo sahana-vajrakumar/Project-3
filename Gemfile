@@ -64,3 +64,4 @@ gem 'rest-client'
 gem 'faker'
 gem 'jquery-rails'
 gem 'nokogiri'
+gem 'rails_12factor', group: :production
