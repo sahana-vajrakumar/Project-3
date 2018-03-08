@@ -1,0 +1,19 @@
+<h1>Movie details</h1>
+
+
+
+   Movie Title : <%= @movieshow[0]["movie"]["title"] %>
+   <br>
+   Released ON : <%= @movieshow[0]["movie"]["year"] %>
+   <%image = "https://image.tmdb.org/t/p/w500#{ MoviePoster.get_poster_path_cached( @movieshow[0]['movie']['ids']['tmdb'] ) }" %>
+ 
+   <img src="<%= image %>" class="img-rounded">
+
+   <button class="watchNow" >Watch Now</button>
+<!--
+   <% @links_array.each do |link| %>
+   <% @name_array.each do |name| %>
+   <a href="https:trakt.tv<%=link%>"><%= name%></a>
+   <br>
+   <% end %>
+   <% end %> -->

@@ -1,0 +1,97 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap-sprockets";
+@import "bootstrap";
+
+ body{
+
+    background-color: rgba(0, 0, 0, 0.96);
+    color: #FFFAFA;
+ }
+
+ .image{
+   max-width: 200px;
+   max-height: 200px;
+ }
+
+ .icon{
+   max-width: 20px;
+   max-height: 20px;
+ }
+
+ .profile{
+   max-width: 100px;
+   max-height: 100px;
+ }
+
+ .row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+.column {
+    float: left;
+    width: 25%;
+    padding: 10px;
+}
+
+/* Style the images inside the grid */
+.column img {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.column img:hover {
+    opacity: 1;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+h2{
+  text-align: center;
+  font-family: 'Lobster', cursive;
+  font-size: 40px;
+}
+
+.navbar navbar-default navbar-fixed-top{
+  background-color: black;
+}
+
+
+.navbar {
+    margin-bottom: 0;
+    background-color: rgba(0 ,0 ,0 ,0.85);
+    z-index: 9999;
+    border: 0;
+    font-size: 18px !important;
+    line-height: 1.42857143 !important;
+    letter-spacing: 4px;
+    border-radius: 0;
+    font-family: Montserrat, sans-serif;
+}
+
+.navbar-header{
+  font-size: 18px !important;
+
+}

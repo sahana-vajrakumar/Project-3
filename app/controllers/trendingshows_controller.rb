@@ -5,7 +5,7 @@ class TrendingshowsController < ApplicationController
   def index
 
 
-@show_results = HTTParty.get("https://api.trakt.tv/shows/popular", {
+@show_results = HTTParty.get("https://api.trakt.tv/shows/played/weekly", {
         method: "GET",
         headers: {
           "Accept": 'application/json',

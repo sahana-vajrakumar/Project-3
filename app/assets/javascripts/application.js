@@ -15,6 +15,7 @@
 //= require_tree .
 //= require rails-ujs
 //= require_tree .
+//= require bootstrap-sprockets
 
 
 $(document).ready(function() {
@@ -37,7 +38,6 @@ $(document).ready(function() {
 })
 
 
-
 $(".addWatchedHistory").click(function(){
 
 $.ajax({
@@ -49,12 +49,21 @@ $.ajax({
     traktid: $(this).data('traktid'),
     image: $(this).data('image')
 
-
-
   }
 
 })
 
-
 })
+
+
+$(".moreInfo").click(function(){
+  alert ($(this).data('title'))
+})
+
+$(".watchNow").click(function(){
+  // `https://trakt.tv/movies/${$(this).data('slug')}/streaming_links`
+  window.location.href=`https://trakt.tv/movies/${$(this).data('slug')}/streaming_links`;
+})
+
+
 });

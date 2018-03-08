@@ -14,19 +14,10 @@
   <%= @user.email %>
 </p>
 
-<p>
-  <strong>Password:</strong>
-  <%= @user.password %>
-</p>
+
 
 <p>
   <strong>Icon:</strong>
   <br>
-  <image id="user_pic" src="<%= @user.icon %>"></image>
+ <img src="http://www.freeiconspng.com/uploads/-avatar-people-person-profile-user-women-icon--icon-search-engine-23.png" class="profile">
 </p>
-
-
-<%= link_to 'Edit', edit_user_path(@user) %>
-<div class="panel-footer">
-  <%= link_to 'Check Your Stats', stats_path, class: "btn btn-lg" %>
-</div>

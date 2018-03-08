@@ -1,20 +1,36 @@
 <h1>Movie Search Results</h1>
 <hr>
 
+<div class="row">
 <% @movieresults.each do |movie| %>
 
+ <!-- <p>
   Title:  <%= movie["movie"]["title"]%>
-
   <br>
   Movie Released on: <%= movie["movie"]["year"]%>
   <br>
+  </p> -->
+  <% if MoviePoster.get_poster_path_cached( movie['movie']['ids']['tmdb'] )%>
   <%image = "https://image.tmdb.org/t/p/w200#{ MoviePoster.get_poster_path_cached( movie['movie']['ids']['tmdb'] ) }" %>
-  <img src="<%= image %>">
+  <% else %>
+  <%image = "http://sherly.mobile9.com/download/media/210/unknown_imzea6c9.jpg"%>
+  <% end %>
+  <%= link_to movie_path(movie["movie"]["ids"]["trakt"]) do %>
+<div class="column">
+    <img src="<%= image %>" class="img-rounded">
 
-  <button class="addFavourite" data-traktid="<%= movie["movie"]["ids"]["trakt"]%>" data-title="<%= movie["movie"]["title"]%>" data-year="<%= movie["movie"]["year"]%>" data-image="<%= image%>">Add to Favourites</button>
+</div>
+  <% end %>
 
-  <button class="addWatchedHistory" data-traktid="<%= movie["movie"]["ids"]["trakt"]%>" data-title="<%= movie["movie"]["title"]%>" data-year="<%= movie["movie"]["year"]%>" data-image="<%= image%>">Add to your Watched History</button>
 
-  <hr>
+
+  <button class="addFavourite" data-traktid="<%= movie["movie"]["ids"]["trakt"]%>" data-title="<%= movie["movie"]["title"]%>" data-year="<%= movie["movie"]["year"]%>" data-image="<%= image%>"><img src="http://www.macrobusiness.com.au/wp-content/uploads/2013/05/Favourites-Alt.png" class="icon"></button>
+
+  <button class="addWatchedHistory" data-traktid="<%= movie["movie"]["ids"]["trakt"]%>" data-title="<%= movie["movie"]["title"]%>" data-year="<%= movie["movie"]["year"]%>" data-image="<%= image%>"><img src="http://laoblogger.com/images/check-mark-clipart-no-background-6.jpg" class="icon"></button>
+
+  <button class="moreInfo" data-traktid="<%= movie["movie"]["ids"]["trakt"]%>" data-title="<%= movie["movie"]["title"]%>" data-year="<%= movie["movie"]["year"]%>" data-image="<%= image%>">More Info</button>
+
+</div>
+  <!-- <hr> -->
 
 <% end %>

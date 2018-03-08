@@ -1,18 +1,27 @@
 <h2>Top Trending Movies<h2>
 
-<hr>
+
+<div class="row">
 
 <% @results.each do |movie| %>
 
-Title:  <%= movie["movie"]["title"]%>
+<!-- Title:  <%= movie["movie"]["title"]%>
 <br>
 Year:  <%= movie["movie"]["year"]%>
 <br>
 No of People watching: <%= movie["watchers"]%>
 <hr>
 
-<br>
+<br> -->
+<%= link_to trendingmovie_path(movie["movie"]["ids"]["trakt"]) do %>
+<div class="column">
 <img src="<%= "https://image.tmdb.org/t/p/w200#{ MoviePoster.get_poster_path_cached( movie['movie']['ids']['tmdb'] ) }" %>">
+
+</div>
+<% end %>
+
 
 
 <% end %>
+
+</div>

@@ -3,11 +3,16 @@
 <hr>
 <% @show_results.each do |show| %>
 
-  Title:  <%= show["title"]%>
+  Title:  <%= show["show"]["title"]%>
   <br>
-  Year:  <%= show["year"]%>
+  Year:  <%= show["show"]["year"]%>
   <br>
-  <img src="<%= "https://image.tmdb.org/t/p/w200#{ MoviePoster.get_poster_path_cached( show['ids']['tmdb'] ) }" %>">
+  <% if MoviePoster.get_poster_path_cached( show['show']['ids']['tmdb'] )%>
+  <%image = "https://image.tmdb.org/t/p/w200#{ MoviePoster.get_poster_path_cached( show['show']['ids']['tmdb'] ) }" %>
+  <% else %>
+  <%image = "http://sherly.mobile9.com/download/media/210/unknown_imzea6c9.jpg"%>
+  <% end %>
+  <img src="<%= image %>" class="img-rounded">
   <hr>
 
 

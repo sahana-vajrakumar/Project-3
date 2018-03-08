@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 post '/login' => 'session#create'
 delete '/login' => 'session#destroy'
 
-  root to: 'homepages#home'
+  root to: 'trendingmovies#index'
   resources :trendingmovies
   resources :trendingshows
   resources :users
